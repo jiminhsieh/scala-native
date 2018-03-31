@@ -46,8 +46,7 @@ before_script:
 
 script:
   - java -version
-  - > 
-    sbt \
+  - if [ -n "$CLANG_FORMAT_PATH" ]; then scripts/clangfmt --test; fi && scripts/scalafmt --test && > sbt \
       "-no-colors" \
       "-J-Xmx2G" \
       "^^ $SBT_VERSION" \
