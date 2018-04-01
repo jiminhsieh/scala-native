@@ -46,6 +46,7 @@ before_script:
 
 script:
   - java -version
+  - pwd
   - if [ -n "$CLANG_FORMAT_PATH" ]; then $TRAVIS_BUILD_DIR/scripts/clangfmt --test; fi && \
     $TRAVIS_BUILD_DIR/scripts/scalafmt --test && \
     sbt \
