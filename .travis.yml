@@ -48,8 +48,8 @@ script:
   - java -version
   - pwd
   - ls scripts
-  - if [ -n "$CLANG_FORMAT_PATH" ]; then sh $TRAVIS_BUILD_DIR/scripts/clangfmt --test; fi && \
-    sh $TRAVIS_BUILD_DIR/scripts/scalafmt --test && \
+  - if [ -n "$CLANG_FORMAT_PATH" ]; then /bin/sh $TRAVIS_BUILD_DIR/scripts/clangfmt --test; fi && \
+    /bin/sh $TRAVIS_BUILD_DIR/scripts/scalafmt --test && \
     sbt \
       "-no-colors" \
       "-J-Xmx2G" \
